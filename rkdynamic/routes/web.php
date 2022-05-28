@@ -32,6 +32,9 @@ Route::get('category/restore/{id}', [CategoryController::class, 'restoreCategory
 //Brand Routes
 Route::get('/brand/all', [BrandController::class, 'AllBrands'])->name('all.brand');
 Route::post('/brand/add', [BrandController::class, 'addBrand'])->name('store.brand');
+Route::get('/brand/edit/{id}', [BrandController::class, 'EditBrand']);
+Route::post('/brand/update/{id}', [BrandController::class, 'UpdateBrand']);
+Route::get('/brand/delete/{id}', [BrandController::class, 'DeleteBrand']);
 
 Route::middleware([
     'auth:sanctum',

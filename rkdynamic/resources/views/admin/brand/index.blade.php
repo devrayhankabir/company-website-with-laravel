@@ -40,7 +40,7 @@
                                         <td>{{ $data->brand_name }}</td>
                                         <td><img height="100" width="100" src="{{asset('storage/images/'.$data->brand_image)}}" alt=""></td>
                                         <td>{{ $data->created_at->diffForHumans() }}</td>
-                                        <td><a class="btn btn-secondary" href="{{url('brand/edit')}}/{{ $data->id }}">Edit</a><a class="btn btn-danger ml-2" href="{{url('brand/delete')}}/{{ $data->id }}">Delete</a></td>
+                                        <td><a class="btn btn-secondary" href="{{url('brand/edit')}}/{{ $data->id }}">Edit</a><a class="btn btn-danger ml-2" href="{{url('brand/delete')}}/{{ $data->id }}" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
                                         </tr>
                                         @endforeach
 
