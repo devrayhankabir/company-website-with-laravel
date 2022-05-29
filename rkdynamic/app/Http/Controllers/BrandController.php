@@ -4,11 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Carbon\Carbon;
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class BrandController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
     public function AllBrands(){
 
         $brand_data = Brand::latest()->paginate(5);
@@ -32,7 +40,9 @@ class BrandController extends Controller
    
     $brand_name = $request->brand_name;
 
-    $brand_image = $request->file('brand_image')->store('public/images');
+    $brand_image = $request->file('brand_image');
+    
+    $brand_image->store('public/images');
 
     // if (isset($request->brand_image)) {
 
@@ -56,7 +66,7 @@ class BrandController extends Controller
     $addBrand = Brand::insert([
 
         'brand_name'   => $brand_name,
-        'brand_image'   => $request->file('brand_image')->hashName(),
+        'brand_image'   => $brand_image->hashName(),
         'created_at'    => Carbon::now()
 
         

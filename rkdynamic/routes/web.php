@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Images;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,11 @@ Route::post('/brand/add', [BrandController::class, 'addBrand'])->name('store.bra
 Route::get('/brand/edit/{id}', [BrandController::class, 'EditBrand']);
 Route::post('/brand/update/{id}', [BrandController::class, 'UpdateBrand']);
 Route::get('/brand/delete/{id}', [BrandController::class, 'DeleteBrand']);
+
+
+//Multiple Images
+Route::get('/multipleimages/all', [Images::class, 'showImages'])->name('all.multimages');
+Route::post('/multipleimages/add', [Images::class, 'addImages'])->name('store.images');
 
 Route::middleware([
     'auth:sanctum',
