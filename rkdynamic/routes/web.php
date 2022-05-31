@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Images;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,3 +54,6 @@ Route::middleware([
         return view('dashboard', ['users_data'=>$users_data]);
     })->name('dashboard');
 });
+
+//Admin Dashboard Routes
+Route::get('/user/dashboard', [HomeController::class, 'AdminHome'])->name('user.dashboard');
