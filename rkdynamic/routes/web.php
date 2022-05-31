@@ -49,11 +49,11 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
 
-        $users_data = User::all();
+        //$users_data = User::all();
 
-        return view('dashboard', ['users_data'=>$users_data]);
+        return view('admin.index');
     })->name('dashboard');
 });
 
 //Admin Dashboard Routes
-Route::get('/user/dashboard', [HomeController::class, 'AdminHome'])->name('user.dashboard');
+Route::get('/user/logout', [HomeController::class, 'Logout'])->name('user.logout');

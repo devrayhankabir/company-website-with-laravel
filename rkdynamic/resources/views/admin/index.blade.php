@@ -1,5 +1,5 @@
 @extends('admin.Layout.app')
-
+@section('title', 'rkDynamic - Admin Dashboard')
 @section('content')
     <!-- Top Statistics -->
     <div class="row">
