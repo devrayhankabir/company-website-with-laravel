@@ -1,9 +1,7 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-           All Brand
-        </h2>
-    </x-slot>
+@extends('admin.Layout.app')
+@section('title', 'Brands')
+
+@section('content')
 
     <div class="py-12">
 
@@ -18,7 +16,7 @@
                     </div>
                     @endif
                     <div class="card">
-                        <div class="card-header">All BRand</div>
+                        <div class="card-header">All Brands</div>
 
                             <div class="card-body">
                                 <table class="table">
@@ -38,7 +36,7 @@
                                         <tr>
                                         <th scope="row">{{$serial++}}</th>
                                         <td>{{ $data->brand_name }}</td>
-                                        <td><img height="100" width="100" src="{{asset('storage/images/'.$data->brand_image)}}" alt=""></td>
+                                        <td><img height="100" width="100" src="{{asset('storage/images/brands/'.$data->brand_image)}}" alt=""></td>
                                         <td>{{ $data->created_at->diffForHumans() }}</td>
                                         <td><a class="btn btn-secondary" href="{{url('brand/edit')}}/{{ $data->id }}">Edit</a><a class="btn btn-danger ml-2" href="{{url('brand/delete')}}/{{ $data->id }}" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
                                         </tr>
@@ -46,14 +44,14 @@
 
                                     </tbody>
 
-                                   
+
 
                                  </table>
 
                                  {{$brand_data->links()}}
                             </div>
 
-                    
+
                 </div>
                 </div>
 
@@ -68,16 +66,16 @@
                             <div class="mb-3">
                                 <label for="brand-name" class="form-label">Brand Name</label>
                                 <input type="text" name="brand_name" class="form-control" id="brand-name">
-                                
+
                                 @error('brand_name')
                                     <span class="text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="brand-image" class="form-label">Brand Name</label>
-                                
+
                                 <input type="file" name="brand_image" class="form-control" id="brand-image">
-                                
+
                                 @error('brand_image')
                                     <span class="text text-danger">{{ $message }}</span>
                                 @enderror
@@ -95,7 +93,7 @@
 
 
 
-        
+
 
 
 
@@ -103,4 +101,6 @@
 
 
     </div>
-</x-app-layout>
+
+@endsection
+

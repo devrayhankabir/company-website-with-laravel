@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Images;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontend\HomePageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomepageController::class, 'showHome']);
 
 //Category Routes
 Route::get('/category/all', [CategoryController::class, 'AllCategory'])->name('all.category');
@@ -56,4 +55,4 @@ Route::middleware([
 });
 
 //Admin Dashboard Routes
-Route::get('/user/logout', [HomeController::class, 'Logout'])->name('user.logout');
+Route::get('/user/logout', [HomePageController::class, 'Logout'])->name('user.logout');

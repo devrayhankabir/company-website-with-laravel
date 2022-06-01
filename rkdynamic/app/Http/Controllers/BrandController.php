@@ -16,7 +16,7 @@ class BrandController extends Controller
         $this->middleware('auth');
     }
 
-    
+
     public function AllBrands(){
 
         $brand_data = Brand::latest()->paginate(5);
@@ -37,12 +37,12 @@ class BrandController extends Controller
             'brand_image.mimes'         => 'Brand Image Must Be jpg, jpeg, png Format'
         ]
     );
-   
+
     $brand_name = $request->brand_name;
 
     $brand_image = $request->file('brand_image');
-    
-    $brand_image->store('public/images');
+
+    $brand_image->store('public/images/brands');
 
     // if (isset($request->brand_image)) {
 
@@ -69,7 +69,7 @@ class BrandController extends Controller
         'brand_image'   => $brand_image->hashName(),
         'created_at'    => Carbon::now()
 
-        
+
     ]);
 
     return redirect()->back()->with('success', 'Brand Data Inserted Successfully');
