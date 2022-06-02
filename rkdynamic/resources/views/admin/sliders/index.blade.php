@@ -53,7 +53,7 @@
                                     Edit / Delete
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="{{url('/sliders/edit/'.$slider_data->id)}}">Edit</a>
                                     <a class="dropdown-item" href="#">Delete</a>
                                 </div>
                             </div>

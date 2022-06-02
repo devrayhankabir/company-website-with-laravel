@@ -55,3 +55,5 @@ Route::get('/user/logout', [HomePageController::class, 'Logout'])->name('user.lo
 Route::get('/sliders/all', [SlidersController::class, 'showSliders'])->name('all.sliders');
 Route::get('/sliders/add', [SlidersController::class, 'addSlider'])->name('add.slider');
 Route::post('/sliders/store', [SlidersController::class, 'storeSlider'])->name('store.sliders');
+Route::get('/sliders/edit/{id}', [SlidersController::class, 'editSlider']);
+Route::post('/sliders/update/{id}', [SlidersController::class, 'udpateSlider']);
