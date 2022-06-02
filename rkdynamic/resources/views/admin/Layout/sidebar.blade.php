@@ -44,8 +44,26 @@
 
 
                             <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('all.sliders')}}">
+                                    <span class="nav-text">Sliders</span>
+
+                                </a>
+                            </li>
+                            <li>
                                 <a class="sidenav-item-link" href="index.html">
-                                    <span class="nav-text">Ecommerce</span>
+                                    <span class="nav-text">About Us</span>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidenav-item-link" href="index.html">
+                                    <span class="nav-text">Services</span>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidenav-item-link" href="index.html">
+                                    <span class="nav-text">Portfolios</span>
 
                                 </a>
                             </li>

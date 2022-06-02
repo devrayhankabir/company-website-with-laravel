@@ -7,16 +7,10 @@ use App\Http\Controllers\Images;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomePageController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\SlidersController;
+
+
+
 
 Route::get('/', [HomepageController::class, 'showHome']);
 
@@ -56,3 +50,8 @@ Route::middleware([
 
 //Admin Dashboard Routes
 Route::get('/user/logout', [HomePageController::class, 'Logout'])->name('user.logout');
+
+//Sliders Route
+Route::get('/sliders/all', [SlidersController::class, 'showSliders'])->name('all.sliders');
+Route::get('/sliders/add', [SlidersController::class, 'addSlider'])->name('add.slider');
+Route::post('/sliders/store', [SlidersController::class, 'storeSlider'])->name('store.sliders');
