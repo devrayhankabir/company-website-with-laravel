@@ -54,7 +54,7 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="{{url('/sliders/edit/'.$slider_data->id)}}">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
+                                    <a class="dropdown-item" href="{{url('/sliders/delete/'.$slider_data->id)}}" onclick=" return confirm('Are You Sure To Delete?')">Delete</a>
                                 </div>
                             </div>
 

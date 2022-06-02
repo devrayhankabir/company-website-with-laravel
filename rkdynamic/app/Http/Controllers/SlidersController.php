@@ -110,4 +110,16 @@ class SlidersController extends Controller
 
 
     }
+
+    public function deleteSlider($id){
+
+        $old_image = Sliders::find($id);
+        $image_path = $old_image->slider_bg;
+
+        unlink('storage/images/sliders/'.$image_path);
+
+        $delete_slider_data = Sliders::find($id)->delete();
+
+        return redirect()->route('all.sliders')->with('success', 'Slider Data Deleted Successfully');
+    }
 }

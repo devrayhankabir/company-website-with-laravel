@@ -57,3 +57,4 @@ Route::get('/sliders/add', [SlidersController::class, 'addSlider'])->name('add.s
 Route::post('/sliders/store', [SlidersController::class, 'storeSlider'])->name('store.sliders');
 Route::get('/sliders/edit/{id}', [SlidersController::class, 'editSlider']);
 Route::post('/sliders/update/{id}', [SlidersController::class, 'udpateSlider']);
+Route::get('/sliders/delete/{id}', [SlidersController::class, 'deleteSlider']);
