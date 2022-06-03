@@ -50,7 +50,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="sidenav-item-link" href="index.html">
+                                <a class="sidenav-item-link" href="{{route('about.us')}}">
                                     <span class="nav-text">About Us</span>
 
                                 </a>

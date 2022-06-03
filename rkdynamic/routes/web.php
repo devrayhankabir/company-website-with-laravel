@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomePageController;
 use App\Http\Controllers\SlidersController;
+use App\Http\Controllers\AboutusController;
 
 
 
@@ -58,3 +59,7 @@ Route::post('/sliders/store', [SlidersController::class, 'storeSlider'])->name('
 Route::get('/sliders/edit/{id}', [SlidersController::class, 'editSlider']);
 Route::post('/sliders/update/{id}', [SlidersController::class, 'udpateSlider']);
 Route::get('/sliders/delete/{id}', [SlidersController::class, 'deleteSlider']);
+
+//About Us Route
+Route::get('/about-us/', [AboutusController::class, 'aboutUs'])->name('about.us');
+Route::post('/about-us/save-changes/', [AboutusController::class, 'saveChanges']);
