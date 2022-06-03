@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="list-desc">List Description</label>
                         <textarea class="form-control" id="list-desc" rows="3" name="list_desc">{{$current_data->line_desc}}</textarea>
-                        <span>Keep Your Lines Seperated</span>
+                        <span>Keep Your Lines Seperated by Pipe Lines( | )</span>
                     </div>
 
                     <div class="form-group">
