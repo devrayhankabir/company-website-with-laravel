@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomePageController;
 use App\Http\Controllers\SlidersController;
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\frontend\ContactPageController;
 
 
 
@@ -63,3 +64,6 @@ Route::get('/sliders/delete/{id}', [SlidersController::class, 'deleteSlider']);
 //About Us Route
 Route::get('/about-us/', [AboutusController::class, 'aboutUs'])->name('about.us');
 Route::post('/about-us/save-changes/', [AboutusController::class, 'saveChanges']);
+
+//Contact Page Routes
+Route::get('/contact-us', [ContactPageController::class, 'showIndex']);
