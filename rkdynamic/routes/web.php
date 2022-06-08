@@ -67,3 +67,4 @@ Route::post('/about-us/save-changes/', [AboutusController::class, 'saveChanges']
 
 //Contact Page Routes
 Route::get('/contact-us', [ContactPageController::class, 'showIndex']);
+Route::post('/contact-us/save-data/', [ContactPageController::class, 'saveContact'])->name('contact.store');

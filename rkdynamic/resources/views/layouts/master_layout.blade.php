@@ -29,6 +29,10 @@
     <!-- Template Main CSS File -->
     <link href="{{asset('frontend/assets/css/style.css')}}" rel="stylesheet">
 
+
+    <!-- jQuery -->
+
+
     <!-- =======================================================
     * Template Name: Company - v2.1.0
     * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
