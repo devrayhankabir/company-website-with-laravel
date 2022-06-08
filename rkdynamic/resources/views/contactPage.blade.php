@@ -44,7 +44,7 @@
 
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
             <div class="col-lg-10">
-                <form action="{{route('contact.store')}}" method="post" class="contact_form_new" id="main_form">
+                <form action="{{route('contact.store')}}" method="POST" class="contact_form_new" id="main_form">
                     @csrf
                     <div class="form-row">
                         <div class="col-md-6 form-group">
@@ -52,7 +52,7 @@
                             <span class="validate name_validate"></span>
                         </div>
                         <div class="col-md-6 form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"/>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Your Email"/>
                             <span class="validate email_validate"></span>
                         </div>
                     </div>
@@ -255,6 +255,8 @@
 
             e.preventDefault();
 
+            $('.loading').addClass('d-block');
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('input[name="_token"]').val()
@@ -267,7 +269,7 @@
                 data:new FormData(this),
                 processData:false,
                 dataType:'json',
-                currentType:false,
+                contentType:false,
                 beforeSend:function (){
 
 
@@ -280,17 +282,17 @@
                     if(data.status == 0){
 
                         $.each(data.error, function (prefix, val){
-
-
-
                             $('span.'+prefix+'_validate').text(val[0]);
+                            $('.loading').removeClass('d-block');
                         });
 
                     }
 
                     if(data.status == 1){
 
-                        alert(data.success_message);
+                        $('.loading').removeClass('d-block');
+                        $('.sent-message').addClass('d-block');
+                        $('#main_form')[0].reset();
                     }
 
                 }

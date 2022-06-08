@@ -44,6 +44,7 @@ class ContactPageController extends Controller
         [
             'name.required' => 'You Must Fill Name Field',
             'email.required'    => 'You Must Fill Email Field',
+            'email.email'    => 'You Should Provide A Valid Email',
             'subject.required'  => 'You Must Provide a Subject',
             'message.required'  => 'You Must Write Something'
         ]
