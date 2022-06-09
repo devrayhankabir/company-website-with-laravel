@@ -10,11 +10,12 @@ use App\Http\Controllers\frontend\HomePageController;
 use App\Http\Controllers\SlidersController;
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\frontend\ContactPageController;
+use App\Http\Controllers\admin\ContactInfoController;
 
 
 
 
-Route::get('/', [HomepageController::class, 'showHome']);
+Route::get('/', [HomepageController::class, 'showHome'])->name('home.route');
 
 //Category Routes
 Route::get('/category/all', [CategoryController::class, 'AllCategory'])->name('all.category');
@@ -65,6 +66,14 @@ Route::get('/sliders/delete/{id}', [SlidersController::class, 'deleteSlider']);
 Route::get('/about-us/', [AboutusController::class, 'aboutUs'])->name('about.us');
 Route::post('/about-us/save-changes/', [AboutusController::class, 'saveChanges']);
 
+
+//Contact Page
+Route::get('/contact-info/',[ContactInfoController::class, 'contactInfo'])->name('contact.info');
+
+
+
+
+//Front End
 //Contact Page Routes
 Route::get('/contact-us', [ContactPageController::class, 'showIndex']);
 Route::post('/contact-us/save-data/', [ContactPageController::class, 'saveContact'])->name('contact.store');
